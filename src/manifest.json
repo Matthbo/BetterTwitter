@@ -1,0 +1,6 @@
+{
+    "name": "BetterTwitter",
+    "description": "A crossbrowser(?) extension for customising Twitter Web",
+    "version": "0.1",
+    "manifest_version": 3
+}
