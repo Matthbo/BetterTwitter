@@ -1,6 +1,11 @@
 {
     "name": "BetterTwitter",
-    "description": "A crossbrowser(?) extension for customising Twitter Web",
+    "description": "A crossbrowser extension for customising Twitter Web",
     "version": "0.1",
-    "manifest_version": 3
+    "author": "Matthbo",
+    "manifest_version": 3,
+    "icons": {},
+    "action": {
+        "default_popup": "popup.html"
+    }
 }
