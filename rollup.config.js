@@ -19,22 +19,6 @@ const config = [
             nodeResolve(),
             commonjs(),
             typescript(),
-        ]
-    },
-    {
-        input: [
-            "src/popup/popup.ts"
-        ],
-        output: {
-            dir: "dist/",
-            format: "es",
-            preserveModules: true,
-            preserveModulesRoot: "src"
-        },
-        plugins: [
-            nodeResolve(),
-            commonjs(),
-            typescript(),
             copy({
                 targets: [{
                     src: [

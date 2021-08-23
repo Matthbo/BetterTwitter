@@ -1,12 +1,12 @@
-// import * as browser from "webextension-polyfill";
+import browser from "webextension-polyfill";
 import { testLog } from "./test";
 
-console.log("Starting...");
+testLog("Starting");
+testLog(document);
 
-testLog();
-
-/* browser.storage.local.set({
+browser.storage.local.set({
     [window.location.hostname]: document.title,
 }).then(() => {
+    console.log("Saved!")
     browser.runtime.sendMessage(`Saved document title for ${window.location.hostname}`);
-}); */
+});
