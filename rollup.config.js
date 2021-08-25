@@ -1,4 +1,4 @@
-import nodeResolve from "@rollup/plugin-node-resolve";
+import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import copy from "rollup-plugin-copy";
@@ -16,9 +16,18 @@ const config = [
             format: "es"
         },
         plugins: [
-            nodeResolve(),
+            resolve(),
             commonjs(),
             typescript(),
+            copy({
+                targets: [{
+                    src: [
+                        "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+                        "node_modules/lit/polyfill-support.js"
+                    ],
+                    dest: "dist"
+                }]
+            }),
             copy({
                 targets: [{
                     src: [
@@ -39,7 +48,7 @@ const config = [
             format: "umd"
         },
         plugins: [
-            nodeResolve(),
+            resolve(),
             commonjs(),
             typescript()
         ]

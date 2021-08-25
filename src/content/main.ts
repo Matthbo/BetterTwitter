@@ -1,7 +1,8 @@
 import browser from "webextension-polyfill";
 import { log } from "./test";
+import "./bttw-component";
 
-export class BetterTwitter {
+class BetterTwitter {
 
     private static instance: BetterTwitter;
 
@@ -34,6 +35,13 @@ export class BetterTwitter {
         const menuIconWrapper = document.createElement("div");
         menuIconWrapper.className = "css-1dbjc4n r-obd0qt r-1pz39u2 r-1777fci r-1vsu8ta r-2j7rtt";
         menuIconWrapper.innerHTML = `<p>🎨</p>`;
+        menuIconWrapper.id = "toggleBTTW";
+        menuIconWrapper.onclick = function() {
+            log("clicked!!!!");
+            const rootDiv = document.querySelector("#react-root");
+            const bttwConponentInject = document.createElement("bttw-component");
+            rootDiv?.appendChild(bttwConponentInject);
+        }
 
         log(menuIconWrapper);
         (menubar?.lastChild as HTMLElement)?.classList.remove("r-2j7rtt");

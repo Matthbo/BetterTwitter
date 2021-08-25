@@ -5,9 +5,13 @@
     "author": "Matthbo",
     "manifest_version": 2,
     "icons": {},
-    "permissions": ["storage"],
+    "permissions": [
+        "storage"
+    ],
     "background": {
-        "scripts": ["./background.js"]
+        "scripts": [
+            "./background.js"
+        ]
     },
     "content_scripts": [
         {
@@ -18,6 +22,8 @@
                 "./content/main.css"
             ],
             "js": [
+                "./webcomponents-bundle.js",
+                "./polyfill-support.js",
                 "./content/app.js"
             ]
         }
